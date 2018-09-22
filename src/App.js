@@ -3,6 +3,7 @@ import './App.css';
 import Person from './Person/Person'; //importo Person per poterlo richiamare nel render
 
 //The definition of the App component as a class.
+//Comment from mac os
 class App extends Component {
   state = {
     persons: [
