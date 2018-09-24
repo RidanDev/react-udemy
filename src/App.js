@@ -91,10 +91,6 @@ class App extends Component {
         {persons}
       </div>
     );
-    
-    //Il codice sotto è equivalente al JSX definito sopra.
-    /*return React.createElement('div', {className: 'App'}, 
-      React.createElement('h1', null, 'Hi, I\'m a React App!!!'));*/
   }
 }
 
