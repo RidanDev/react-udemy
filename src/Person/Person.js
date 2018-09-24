@@ -1,7 +1,6 @@
 //Creo il component Person
 import React from 'react';
-//è possibile importare codice css dentro file javascript
-//grazie a webpacke
+//è possibile importare codice css dentro file javascript grazie a webpack
 import './Person.css'; 
 
 //The definition of the person component as a function.
