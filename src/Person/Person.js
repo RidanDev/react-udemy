@@ -8,7 +8,7 @@ import './Person.css';
 //l'argomento props mi permette di accedere ai campi delle istanze del componente "person".
 const person = (props) => {
     
-    console.log(props)
+    //console.log(props)
     return (
         <div className="Person">
             <p onClick={props.click}>I'm {props.name} and I'm {props.age} years old!!</p>
