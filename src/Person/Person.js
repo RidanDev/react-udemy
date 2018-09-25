@@ -1,5 +1,6 @@
 //Creo il component Person
 import React from 'react';
+import Radium from 'radium';
 //è possibile importare codice css dentro file javascript grazie a webpack
 import './Person.css'; 
 
@@ -16,4 +17,4 @@ const person = (props) => {
     ) 
 };
 
-export default person;
+export default Radium(person);
