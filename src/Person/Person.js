@@ -8,7 +8,7 @@ import classes from './Person.css';
 //l'argomento props mi permette di accedere ai campi delle istanze del componente "person".
 const person = (props) => {    
     return (
-        <div className={classes.person}>
+        <div className={classes.Person}>
             <p onClick={props.click}>I'm {props.name} and I'm {props.age} years old!!</p>
             <p>{props.children}</p>
             <input type="text" onChange={props.changed} value={props.name} />
