@@ -5,8 +5,7 @@ import './Person.css';
 
 //The definition of the person component as a function.
 //l'argomento props mi permette di accedere ai campi delle istanze del componente "person".
-const person = (props) => {
-    
+const person = (props) => {    
     //console.log(props)
     return (
         <div className="Person">

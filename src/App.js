@@ -79,8 +79,6 @@ class App extends Component {
     }
 
     return (
-      //Il codice qui dentro è JSX (javascript) non HTML! React si occupa di tradurre.
-      //ciascun tag <Person> è un'istanza del component person.
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p>This is really working!</p>
