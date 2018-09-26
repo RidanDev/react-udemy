@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; //responsible for rendering anything to the dom.
 import classes from './App.css';
-import Person from './Person/Person'; //importo Person per poterlo richiamare nel render
+import Person from '../components/Persons/Person/Person'; //importo Person per poterlo richiamare nel render
 
 //The definition of the App component as a class.
 class App extends Component {
