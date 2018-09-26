@@ -1,11 +1,24 @@
-import React, { Component } from 'react'; //responsible for rendering anything to the dom.
+import React, { Component } from 'react' //responsible for rendering anything to the dom.
 
-import classes from './App.css';
-import Persons from '../components/Persons/Persons'; //importo Person per poterlo richiamare nel render
+import classes from './App.css'
+import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 
 //The definition of the App component as a class.
 class App extends Component {
+  constructor(props) {
+    super(props)
+    console.log('[App.js] Inside Constructor', props)
+  }
+
+  componentWillMount() {
+    console.log('[App.js] Inside compentWillMount()')
+  }
+
+  componentDidMount() {
+    console.log('[App.js] Inside componentDidMount()')
+  }
+
   state = {
     persons: [
       { id: "asdfa", name: 'Max', age: 28 },
@@ -55,6 +68,7 @@ class App extends Component {
   }
 
   render() { //the method called to render something to the screen.
+    console.log('[App.js] Inside render()')
     let persons = null
 
     if (this.state.showPersons) {
@@ -67,9 +81,10 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <Cockpit
+          appTitle={this.props.title}
           showPersons={this.state.showPersons}
-          persons={this.state.persons} 
-          clicked={this.togglePersonHandler}/>
+          persons={this.state.persons}
+          clicked={this.togglePersonHandler} />
         {persons}
       </div>
     );
