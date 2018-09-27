@@ -9,7 +9,7 @@ class Persons extends Component {
   }
 
   componentWillMount() {
-    console.log('[Persons.js] Inside compentWillMount()')
+    console.log('[Persons.js] Inside componentWillMount()')
   }
 
   componentDidMount() {

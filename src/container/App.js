@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    console.log('[App.js] Inside compentWillMount()')
+    console.log('[App.js] Inside componentWillMount()')
   }
 
   componentDidMount() {
