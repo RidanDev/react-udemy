@@ -12,15 +12,6 @@ class App extends Component {
     super(props)
     console.log('[App.js] Inside Constructor', props)
   }
-
-  componentWillMount() {
-    console.log('[App.js] Inside componentWillMount()')
-  }
-
-  componentDidMount() {
-    console.log('[App.js] Inside componentDidMount()')
-  }
-
   state = {
     persons: [
       { id: "asdfa", name: 'Max', age: 28 },
@@ -28,7 +19,16 @@ class App extends Component {
       { id: "òjdfv", name: 'Stephanie', age: 26 }
     ],
     otherState: 'some other value',
-    showPersons: false
+    showPersons: false,
+    toggleClicked: 0
+  }
+
+  componentWillMount() {
+    console.log('[App.js] Inside componentWillMount()')
+  }
+
+  componentDidMount() {
+    console.log('[App.js] Inside componentDidMount()')
   }
 
   nameChangedHandler = (event, id) => {
@@ -66,7 +66,13 @@ class App extends Component {
 
   togglePersonHandler = () => {
     const doesShow = this.state.showPersons;
-    this.setState({ showPersons: !doesShow });
+    this.setState((prevState, props) => {
+      return {
+        showPersons: !doesShow,
+        toggleClicked: prevState.state.toggleClicked + 1
+      }
+
+    });
   }
 
   render() { //the method called to render something to the screen.
