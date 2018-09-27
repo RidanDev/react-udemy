@@ -4,7 +4,7 @@ import classes from './App.css'
 import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
 import Aux from '../hoc/Auxiliary'
-import withClass from '../hoc/withClass'
+import withClass from '../hoc/WithClass'
 
 //The definition of the App component as a class.
 class App extends Component {
