@@ -7,6 +7,8 @@ import Aux from '../hoc/Auxiliary'
 import withClass from '../hoc/WithClass'
 
 //The definition of the App component as a class.
+
+export const AuthContext = React.createContext(false)
 class App extends Component {
   constructor(props) {
     super(props)
@@ -20,7 +22,8 @@ class App extends Component {
     ],
     otherState: 'some other value',
     showPersons: false,
-    toggleClicked: 0
+    toggleClicked: 0,
+    authenticated: false
   }
 
   componentWillMount() {
@@ -75,6 +78,10 @@ class App extends Component {
     });
   }
 
+  loginHandler = () => {
+    this.setState({ authenticated: true })
+  }
+
   render() { //the method called to render something to the screen.
     console.log('[App.js] Inside render()')
     let persons = null
@@ -83,7 +90,8 @@ class App extends Component {
       persons = <Persons
         persons={this.state.persons}
         clicked={this.deletePersonHandler}
-        changed={this.nameChangedHandler} />
+        changed={this.nameChangedHandler}
+      />
     }
 
     return (
@@ -92,8 +100,12 @@ class App extends Component {
           appTitle={this.props.title}
           showPersons={this.state.showPersons}
           persons={this.state.persons}
+          login={this.loginHandler}
           clicked={this.togglePersonHandler} />
-        {persons}
+        <AuthContext.Provider value={this.state.authenticated}>
+          {persons}
+        </AuthContext.Provider>
+
       </Aux>
     );
   }
