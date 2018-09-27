@@ -1,13 +1,14 @@
 import React from 'react'
 
 import classes from './Cockpit.css'
+import Aux from '../../Auxiliary/Auxiliary'
 
 const cockpit = (props) => {
     const assignedClasses = []
-    let btnClass = ''
+    let btnClass = classes.Button
 
     if (props.showPersons) {
-        btnClass = classes.Red
+        btnClass = [classes.Button, classes.Red].join(' ')
     }
     if (props.persons.length <= 2) {
         assignedClasses.push(classes.red) //assignedClasses = ['red']
@@ -17,14 +18,15 @@ const cockpit = (props) => {
     }
 
     return (
-        <div className={classes.Cockpit}>
+        //Uso Aux per ritornare props.children evitando di usare il tag <div>
+        <Aux>
             <h1>{props.appTitle}</h1>
             <p className={assignedClasses.join(' ')}>This is really working!</p>
             <button
                 className={btnClass}
                 onClick={props.clicked}>Toggle Persons
             </button>
-        </div>
+        </Aux>
 
     )
 }
