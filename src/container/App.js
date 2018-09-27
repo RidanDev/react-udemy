@@ -69,7 +69,7 @@ class App extends Component {
     this.setState((prevState, props) => {
       return {
         showPersons: !doesShow,
-        toggleClicked: prevState.state.toggleClicked + 1
+        toggleClicked: prevState.toggleClicked + 1
       }
 
     });
