@@ -25,13 +25,23 @@ const burger = (props) => {
       5. genero un array di JSX dove setto una key formata da nomeingrediente + i
       e il type con il nome dell'ingrediente
       
+      6. reduce() creo un solo array che contiene tutti i valori invece che un array
+      di array
     */
-    const transformedIngredients = Object.keys(props.ingredients)
+    let transformedIngredients = Object.keys(props.ingredients)
         .map(igKey => {
             return [...Array(props.ingredients[igKey])].map((_, i) => {
                 return <BurgerIngredient key={igKey + i} type={igKey} />
             })
         })
+        .reduce((arr, el) => {
+            return arr.concat(el)
+        }, [])
+
+    if (transformedIngredients.length === 0) {
+        transformedIngredients = <p>Please start adding ingredients!</p>
+    }
+    console.log(transformedIngredients)
 
     return (
         <div className={classes.Burger}>
