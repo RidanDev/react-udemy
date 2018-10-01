@@ -2,6 +2,7 @@ import React from 'react'
 
 import Aux from '../../hoc/Auxiliary'
 import classes from './Layout.css'
+import Toolbar from '../Navigation/Toolbar/Toolbar'
 
 const layout = (props) => (
     //adjacent jsx elements
@@ -9,7 +10,7 @@ const layout = (props) => (
     //oppure si può creare un auxiliary higher order component (consigliato)
     //come alternativa si potrebbe wrappare tutto con un <div> di cui non abbiamo però bisogno. 
     <Aux>
-        <div>Toolbar, SideDrawer, Backdrop</div>
+        <Toolbar /> 
         <main className={classes.Content}>
             {props.children}
         </main>
