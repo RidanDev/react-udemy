@@ -16,7 +16,7 @@ class Blog extends Component {
     componentDidMount() {
         //.then() è un metodo di ES6 che permette di eseguire del codice
         //solamente quando la richiesta è stata effettuata
-        axios.get('http://jsonplaceholder.typicode.com/posts')
+        axios.get('http://jsonplaceholder.typicode.com/postsss')
             .then(response => {
                 const posts = response.data.slice(0, 4)
                 const updatedPosts = posts.map(post => {
