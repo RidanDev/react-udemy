@@ -21,7 +21,7 @@ class ContactData extends Component {
         this.setState({ loading: true })
         const order = {
             ingredients: this.props.ingredients,
-            price: this.state.price,
+            price: this.props.price,
             customer: {
                 name: 'Gianluca Nadir Villalba',
                 address: {
@@ -47,6 +47,7 @@ class ContactData extends Component {
     }
 
     render() {
+        console.log(this.props)
         let form = (
             <form>
                 <input className={classes.input} type="text" name="name" placeholder="Your Name" />
