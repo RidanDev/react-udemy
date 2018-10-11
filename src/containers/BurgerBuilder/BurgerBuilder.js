@@ -15,22 +15,11 @@ class BurgerBuilder extends Component {
 
     //UI State only. Don't need to manage it with redux
     state = {
-        purchasing: false,
-        loading: false,
-        error: false
+        purchasing: false
     }
 
     componentDidMount() {
         console.log(this.props)
-        /*axios.get('https://react-my-burger-f4fec.firebaseio.com/ingredients.json')
-            .then(response => {
-                this.setState({
-                    ingredients: response.data
-                })
-            })
-            .catch(error => {
-                this.setState({ error: true })
-            })*/
     }
 
     updatePurchaseState = (ingredients) => {
@@ -86,9 +75,7 @@ class BurgerBuilder extends Component {
                 purchaseCanceled={this.purchaseCancelHandler}
                 purchaseContinued={this.purchaseContinueHandler} />
         }
-        if (this.state.loading) {
-            orderSummary = <Spinner />
-        }
+
         return (
             <Aux>
                 <Modal
