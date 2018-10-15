@@ -41,8 +41,8 @@ export const auth = (email, password, isSignup) => {
                 dispatch(authSuccess(response.data.idToken, response.data.localId))
             })
             .catch(err => {
-                console.log(err)
-                dispatch(authFail(err))
+                dispatch(authFail(err.response.data.error))
+                //console.log(err.response.data.error.message.split('_').join(' '))
             })
     }
 }      
