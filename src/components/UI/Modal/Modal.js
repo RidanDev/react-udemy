@@ -7,7 +7,7 @@ import Backdrop from '../Backdrop/Backdrop'
 class Modal extends Component {
     /*
     Essendo OrderSummary istanziato all'interno di Modal,
-    viene fatto chiamato il rendering di OrderSummary ogni
+    viene fatto chiamare il rendering di OrderSummary ogni
     volta che viene aggiunto un ingradiente (quindi quando effettivamente
     l'OrderModal non è visibile). Per ottimizzare l'app utilizziamo
     shouldComponentUpdate per decidere quando chiamare il render
