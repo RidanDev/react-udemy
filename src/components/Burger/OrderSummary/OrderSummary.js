@@ -6,9 +6,6 @@ import Button from '../../UI/Button/Button'
 class OrderSummary extends Component {
     //Questo componente può essere un functional component.
     //E' una classe solo per il debugging.
-    componentWillUpdate() {
-        console.log('[OrderSummary] WillUpdate')
-    }
 
     render() {
         const ingredientSummary = Object.keys(this.props.ingredients)
